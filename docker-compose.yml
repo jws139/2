@@ -17,13 +17,13 @@ services:
       - MYSQL_HOST=${MYSQL_HOST:-mysql}
       - MYSQL_PORT=${MYSQL_PORT:-3306}
       - MYSQL_USER=${MYSQL_USER:-edu_rag}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD:?请在 .env 中设置 MYSQL_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-填写你的数据库密码}
       - MYSQL_DATABASE=${MYSQL_DATABASE:-subjects_kg}
       
       # Redis 配置
       - REDIS_HOST=${REDIS_HOST:-redis}
       - REDIS_PORT=${REDIS_PORT:-6379}
-      - REDIS_PASSWORD=${REDIS_PASSWORD:?请在 .env 中设置 REDIS_PASSWORD}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-填写你的Redis密码}
       - REDIS_DB=${REDIS_DB:-0}
       
       # Milvus 配置
@@ -33,7 +33,7 @@ services:
       - MILVUS_COLLECTION_NAME=${MILVUS_COLLECTION_NAME:-edurag_xian_1}
       
       # LLM 配置
-      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:?请在 .env 中设置 DASHSCOPE_API_KEY}
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-填写你的api key}
       - LLM_MODEL=${LLM_MODEL:-qwen-plus}
       - DASHSCOPE_BASE_URL=${DASHSCOPE_BASE_URL:-https://dashscope.aliyuncs.com/compatible-mode/v1}
       

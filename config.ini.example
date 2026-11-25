@@ -3,14 +3,14 @@
 [mysql]
 host = localhost
 user = edu_rag
-password = <your-mysql-password>
+password = 填写你的数据库密码
 database = subjects_kg
 
 # Redis 配置
 [redis]
 host = localhost
 port = 6379
-password = <your-redis-password>
+password = 填写你的Redis密码
 db = 0
 
 # Milvus 配置
@@ -24,7 +24,7 @@ collection_name = edurag_bj31
 [llm]
 model = qwen3.7-max
 # 本地开发可填在这里；更推荐用环境变量 DASHSCOPE_API_KEY，避免写进文件
-dashscope_api_key = <your-dashscope-api-key>
+dashscope_api_key = 填写你的api key
 dashscope_base_url = https://dashscope.aliyuncs.com/compatible-mode/v1
 
 # 检索参数配置

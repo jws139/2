@@ -27,7 +27,7 @@ class Config:
         # MySQL 用户名
         self.MYSQL_USER = os.getenv('MYSQL_USER', self.config.get('mysql', 'user', fallback='edu_rag'))
         # MySQL 密码（仅从环境变量或本地 config.ini 读取，不写入代码）
-        self.MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', self.config.get('mysql', 'password', fallback=''))
+        self.MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', self.config.get('mysql', 'password', fallback='填写你的数据库密码'))
         # MySQL 数据库名
         self.MYSQL_DATABASE = os.getenv('MYSQL_DATABASE', self.config.get('mysql', 'database', fallback='subjects_kg'))
 
@@ -37,7 +37,7 @@ class Config:
         # Redis 端口
         self.REDIS_PORT = int(os.getenv('REDIS_PORT', self.config.get('redis', 'port', fallback=6379)))
         # Redis 密码（仅从环境变量或本地 config.ini 读取，不写入代码）
-        self.REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', self.config.get('redis', 'password', fallback=''))
+        self.REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', self.config.get('redis', 'password', fallback='填写你的Redis密码'))
         # Redis 数据库编号
         self.REDIS_DB = int(os.getenv('REDIS_DB', self.config.get('redis', 'db', fallback=0)))
 
@@ -58,7 +58,7 @@ class Config:
         self.LLM_MODEL = self.config.get('llm', 'model', fallback='qwen-plus')
         # DashScope API 密钥（优先环境变量，其次本地 config.ini，均为空则运行时报错）
         self.DASHSCOPE_API_KEY = os.getenv('DASHSCOPE_API_KEY',
-                                           self.config.get('llm', 'dashscope_api_key', fallback=''))
+                                           self.config.get('llm', 'dashscope_api_key', fallback='填写你的api key'))
         # DashScope API 地址
         self.DASHSCOPE_BASE_URL = self.config.get('llm', 'dashscope_base_url',
                                                   fallback='https://dashscope.aliyuncs.com/compatible-mode/v1')
