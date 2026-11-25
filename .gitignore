@@ -22,8 +22,12 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Model weights and training checkpoints (too large for Git, download separately)
-rag_qa/models/
+# Model weights and training checkpoints
+# Only keep bert-base-chinese (tracked via Git LFS); download the rest separately
+rag_qa/models/*
+!rag_qa/models/bert-base-chinese/
+rag_qa/models/bert-base-chinese/tf_model.h5
+rag_qa/models/bert-base-chinese/flax_model.msgpack
 rag_qa/core/bert_results/
 
 # Raw document samples
