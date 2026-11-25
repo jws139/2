@@ -1,0 +1,67 @@
+# 复制为 config.ini 后按本地环境填写
+# MySQL 配置
+[mysql]
+host = localhost
+user = edu_rag
+password = <your-mysql-password>
+database = subjects_kg
+
+# Redis 配置
+[redis]
+host = localhost
+port = 6379
+password = <your-redis-password>
+db = 0
+
+# Milvus 配置
+[milvus]
+host = localhost
+port = 19530
+database_name = itcast
+collection_name = edurag_bj31
+
+# LLM 配置
+[llm]
+model = qwen3.7-max
+dashscope_base_url = https://dashscope.aliyuncs.com/compatible-mode/v1
+
+# 检索参数配置
+[retrieval]
+parent_chunk_size = 1200
+child_chunk_size = 300
+chunk_overlap = 60
+retrieval_k = 20
+candidate_m = 5
+
+# 应用配置
+[app]
+valid_sources = ["ai", "java", "test", "ops", "bigdata"]
+customer_service_phone = 10086
+
+# BERT 模型训练与推理配置
+[bert]
+pre_trained_model_name = bert-base-chinese
+model_path = bert_query_classifier
+num_labels = 2
+max_length = 128
+test_size = 0.2
+random_state = 42
+output_dir = bert_results
+save_total_limit = 1
+num_train_epochs = 3
+per_device_train_batch_size = 8
+per_device_eval_batch_size = 8
+learning_rate = 2e-5
+warmup_steps = 500
+weight_decay = 0.01
+logging_dir = ./bert_logs
+logging_steps = 10
+evaluation_strategy = epoch
+save_strategy = epoch
+load_best_model_at_end = True
+metric_for_best_model = eval_loss
+fp16 = False
+
+# 日志配置
+[logger]
+log_file = ./logs/app.log

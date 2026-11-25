@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets and local config (use config.ini.example as template)
+.env
+config.ini
+config_*.ini
+!config.ini.example
+
+# Logs
+logs/
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Model weights and training checkpoints (too large for Git, download separately)
+rag_qa/models/
+rag_qa/core/bert_results/
+
+# Raw document samples
+rag_qa/data/ai_data/
+
+# Superseded version
+old_main.py
+
+# Evaluation output
+rag_qa/rag_assesment/ragas_evaluation_results.csv
+
+# Runtime generated
+static/
